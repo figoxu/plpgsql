@@ -1,6 +1,7 @@
 # plpgsql
 
 
+* [plpgsql语法说明](http://www.postgresql.org/docs/9.1/static/plpgsql-overview.html)
 * [简单的转账函数](01.sql)
 * [超越简单函数](02.sql)
 *   * 自定义类型
