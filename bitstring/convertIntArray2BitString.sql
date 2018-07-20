@@ -11,12 +11,9 @@ DECLARE
 BEGIN
 	select CONCAT('select 0::bit(',len,') ') into _query;
 	EXECUTE _query into d;
-	RAISE NOTICE 'HELLO';
 	FOR i IN 1 .. array_upper(positions, 1)
 	LOOP
-		RAISE NOTICE 'INVOKE';
 		select into d set_bit(d,positions[i],1);
-		RAISE NOTICE '%', i;
 	END LOOP;
 	RETURN d;
 END;
