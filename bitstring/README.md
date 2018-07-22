@@ -2,6 +2,7 @@
 * [返回](../README.md)
 * [将bitString转换成int array](convertBitString2IntArray.sql)
 * [将int array转换成bitString](convertIntArray2BitString.sql)
+* [通过UserInfo表生成BitMap](genUserBitmap.sql)
 
 # Bit String的最大长度限制
 * Bit String 最大长度为 83886080
