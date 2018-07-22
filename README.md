@@ -10,3 +10,4 @@
 * [增加自动审计记录](04.sql)
 * [函数封装读写操作且支持审计](05.sql)
 * [BIT String 相关操作](./bitstring/README.md)
+* [SNS相关SQL](./snssql/README.md)
