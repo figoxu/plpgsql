@@ -45,3 +45,45 @@ FROM
 	T
 ORDER BY
 	PATH;
+
+
+
+-- 获取所有的父结点
+WITH RECURSIVE parents( id, parent_id ) 
+AS (
+  -- get leaf children
+  SELECT id, parent_id
+  FROM DEPARTMENT
+  WHERE id = 122
+
+  UNION ALL
+
+  -- get all parents  
+  SELECT t.id, t.parent_id
+  FROM parents p
+  JOIN DEPARTMENT t
+  ON p.parent_id = t.id
+)
+SELECT * from parents ;
+-- SELECT * from parents where parent_id is null;
+
+
+
+-- 获取所有的子结点
+WITH RECURSIVE childs( id, parent_id ) 
+AS (
+  -- get parent
+  SELECT id, parent_id
+  FROM DEPARTMENT
+  WHERE id = 1
+
+  UNION ALL
+
+  -- get all children
+  SELECT t.id, t.parent_id
+  FROM childs c
+  JOIN DEPARTMENT t
+  ON t.parent_id = c.id
+)
+SELECT * from childs;
+
